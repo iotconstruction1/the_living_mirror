@@ -11,7 +11,41 @@ class _CheckInScreenState extends State<CheckInScreen> {
   final _moodController = TextEditingController();
   final _noteController = TextEditingController();
 
-  void _handleSubmit() {
+  void _handleSubmit()
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Daily Check-In')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _moodController,
+              decoration: const InputDecoration(
+                labelText: 'How are you feeling?',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: _noteController,
+              decoration: const InputDecoration(
+                labelText: 'Anything you want to say?',
+                border: OutlineInputBorder(),
+              ),
+              maxLines: 4,
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: _handleSubmit,
+              child: const Text('Submit Check-In'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }{
     final mood = _moodController.text.trim();
     final note = _noteController.text.trim();
 
