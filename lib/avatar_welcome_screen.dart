@@ -8,7 +8,29 @@ class AvatarWelcomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Meet Your Avatar'),
+      ),body: Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text(
+        'This is the beginning of your mirror journey.',
+        style: TextStyle(fontSize: 18),
       ),
+      const SizedBox(height: 20),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CheckInScreen(),
+            ),
+          );
+        },
+        child: const Text('Begin Daily Check-In'),
+      ),
+    ],
+  ),
+),
       body: const Center(
         child: Text(
           'This is the beginning of your transformation.',
