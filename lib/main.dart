@@ -1,22 +1,70 @@
 import 'package:flutter/material.dart';
-import 'avatar_welcome_screen.dart';
 
-void main() {
-  runApp(const LivingMirrorApp());
+class CheckInScreen extends StatefulWidget {
+  const CheckInScreen({super.key});
+
+  @override
+  State<CheckInScreen> createState() => _CheckInScreenState();
 }
 
-class LivingMirrorApp extends StatelessWidget {
-  const LivingMirrorApp({super.key});
+class _CheckInScreenState extends State<CheckInScreen> {
+  final _moodController = TextEditingController();
+  final _noteController = TextEditingController();
+
+  void _handleSubmit() {
+    final mood = _moodController.text.trim();
+    final note = _noteController.text.trim();
+
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Check-In Saved'),
+        content: Text('Mood: $mood\nNote: $note'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          )
+        ],
+      ),
+    );
+
+    _moodController.clear();
+    _noteController.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'The Living Mirror',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return Scaffold(
+      appBar: AppBar(title: const Text('Daily Check-In')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(
+              controller: _moodController,
+              decoration: const InputDecoration(
+                labelText: 'How are you feeling right now?',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: _noteController,
+              decoration: const InputDecoration(
+                labelText: 'Want to write more?',
+                border: OutlineInputBorder(),
+              ),
+              maxLines: 4,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _handleSubmit,
+              child: const Text('Submit'),
+            ),
+          ],
+        ),
       ),
-      home: const AvatarWelcomeScreen(),
     );
   }
 }
