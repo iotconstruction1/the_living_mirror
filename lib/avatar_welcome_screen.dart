@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'checkin_screen.dart';
 class AvatarWelcomeScreen extends StatelessWidget {
   const AvatarWelcomeScreen({super.key});
 
