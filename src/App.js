@@ -55,7 +55,7 @@ const generateReflection = (text) => {
           Reflect
         </button>
       </form>
-      {mirrorResponse && (
+{mirrorResponse && (
   <>
     <div style={{ marginTop: '2rem', backgroundColor: emotionColor }}>
       <strong>Mirror:</strong> {mirrorResponse}
@@ -63,8 +63,5 @@ const generateReflection = (text) => {
     <MiniRitual emotion={emotionColor} />
   </>
 )}
-    </div>
-  );
-}
 
 export default App;
