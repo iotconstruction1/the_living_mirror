@@ -15,12 +15,15 @@ function App() {
     setInput('');
   };
 
-  const generateReflection = (text) => {
- storeMemory(input, reflection);
-const memoryHints = getRecentMemories(); // Can be displayed or used in generateReflection
-0
-    const emotion = detectEmotion(text);
-  return `I hear you. It sounds like you're feeling **${emotion}**. Let's reflect on that.`;
+const generateReflection = (text) => {
+  const emotion = detectEmotion(text);
+  const baseMessage = `It sounds like you're feeling ${emotion}. Let's explore that.`;
+  const tonedMessage = applyMirrorTone(emotion, baseMessage);
+
+  storeMemory(input, tonedMessage);
+  const memoryHints = getRecentMemories();
+
+  return tonedMessage;
 };
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
