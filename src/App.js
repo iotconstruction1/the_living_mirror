@@ -40,12 +40,14 @@ const generateReflection = (text) => {
   const emotion = detectEmotion(text);
   setEmotionColor(getEmotionColor(emotion));
   const tonedMessage = applyMirrorTone(emotion, baseMessage);
-
+  
   storeMemory(input, tonedMessage);
   const memoryHints = getRecentMemories();
-
+const patternInsights = analyzePatterns(memoryLog);
+const mirrorNudge = generateMirrorNudge(patternInsights.dominantEmotion);
   const echo = generateAvatarEcho(tonedMessage, emotion, memoryHints);
 return `${tonedMessage}\n\n${echo}`;
+  
 };
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
