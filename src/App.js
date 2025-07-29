@@ -31,8 +31,7 @@ const [emotionColor, setEmotionColor] = useState('#ffffff');
 
 const generateReflection = (text) => {
   const emotion = detectEmotion(text);
-  
-  const setEmotionColor(getEmotionColor(emotion)); = `It sounds like you're feeling ${emotion}. Let's explore that.`;
+  setEmotionColor(getEmotionColor(emotion));
   const tonedMessage = applyMirrorTone(emotion, baseMessage);
 
   storeMemory(input, tonedMessage);
