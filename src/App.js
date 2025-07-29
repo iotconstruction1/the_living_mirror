@@ -3,7 +3,20 @@ import { storeMemory, getRecentMemories } from './nodes/AdaptiveMemory';
 import { detectEmotion } from './nodes/emotionNode';import React, { useState } from 'react';
 
 // Inside handleSubmit
-
+function getEmotionColor(emotion) {
+  switch (emotion) {
+    case 'happy':
+      return '#d4edda'; // light green
+    case 'sad':
+      return '#d1ecf1'; // soft blue
+    case 'angry':
+      return '#f8d7da'; // soft red
+    case 'anxious':
+      return '#fff3cd'; // pale yellow
+    default:
+      return '#ffffff'; // white
+  }
+}
 function App() {
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
