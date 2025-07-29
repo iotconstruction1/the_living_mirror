@@ -56,10 +56,13 @@ const generateReflection = (text) => {
         </button>
       </form>
       {mirrorResponse && (
-        <div style={{ marginTop: '2rem', backgroundColor: '#f0f0f0', padding: '1rem', borderRadius: '8px' }}>
-          <strong>Mirror:</strong> {mirrorResponse}
-        </div>
-      )}
+  <>
+    <div style={{ marginTop: '2rem', backgroundColor: emotionColor }}>
+      <strong>Mirror:</strong> {mirrorResponse}
+    </div>
+    <MiniRitual emotion={emotionColor} />
+  </>
+)}
     </div>
   );
 }
