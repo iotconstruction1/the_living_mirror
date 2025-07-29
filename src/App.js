@@ -24,6 +24,7 @@ function getEmotionColor(emotion) {
 
 }
 function App() {
+  const [emotionHistory, setEmotionHistory] = useState([]);
   const [avatarImage, setAvatarImage] = useState(null);
 const fileInputRef = useRef(null);
   const handlePhotoUpload = (e) => {
