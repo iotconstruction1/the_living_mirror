@@ -1,3 +1,4 @@
+import MemoryScroll from './nodes/MemoryScroll';
 import MiniRitual from './nodes/MiniRitual';
 import { applyMirrorTone } from './nodes/mirrorTone';
 import { storeMemory, getRecentMemories } from './nodes/AdaptiveMemory';
