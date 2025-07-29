@@ -1,3 +1,4 @@
+import React, { useState, useRef, useEffect } from 'react';
 import generateAvatarEcho from './nodes/AvatarEcho';
 import MemoryScroll from './nodes/MemoryScroll';
 import MiniRitual from './nodes/MiniRitual';
