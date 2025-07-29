@@ -12,56 +12,32 @@ function App() {
   };
 
   const generateReflection = (text) => {
-    // Node 1 Gateway: Sends text to other Nodes eventually
-    return `I hear you. Let's reflect on: "${text}"`;
+    // Node 1 Gateway logic — this can route to other nodes later
+    return `You said: "${text}". Let's begin there.`;
   };
 
   return (
-    <div style={styles.container}>
+    <div style={{ padding: '2rem', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
       <h1>The Living Mirror</h1>
       <form onSubmit={handleSubmit}>
         <textarea
-          placeholder="Speak to your mirror..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          style={styles.textarea}
+          placeholder="Reflect here..."
+          rows="4"
+          style={{ width: '100%', padding: '10px', fontSize: '1rem' }}
         />
-        <button type="submit" style={styles.button}>Reflect</button>
+        <button type="submit" style={{ marginTop: '1rem', padding: '10px 20px' }}>
+          Reflect
+        </button>
       </form>
       {mirrorResponse && (
-        <div style={styles.response}>
-          {mirrorResponse}
+        <div style={{ marginTop: '2rem', backgroundColor: '#f0f0f0', padding: '1rem', borderRadius: '8px' }}>
+          <strong>Mirror:</strong> {mirrorResponse}
         </div>
       )}
     </div>
   );
 }
-
-const styles = {
-  container: {
-    padding: 20,
-    maxWidth: 500,
-    margin: 'auto',
-    textAlign: 'center',
-    fontFamily: 'Arial',
-  },
-  textarea: {
-    width: '100%',
-    height: 120,
-    marginBottom: 10,
-    padding: 10,
-    fontSize: 16,
-  },
-  button: {
-    padding: 10,
-    fontSize: 18,
-    cursor: 'pointer',
-  },
-  response: {
-    marginTop: 20,
-    fontStyle: 'italic',
-    color: '#444',
-  },
-};
 
 export default App;
