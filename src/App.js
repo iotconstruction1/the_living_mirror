@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { detectEmotion } from './nodes/emotionNode';import React, { useState } from 'react';
 
 function App() {
   const [input, setInput] = useState('');
