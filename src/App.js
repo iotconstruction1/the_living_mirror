@@ -24,6 +24,18 @@ function getEmotionColor(emotion) {
 
 }
 function App() {
+  const [avatarImage, setAvatarImage] = useState(null);
+const fileInputRef = useRef(null);
+  const handlePhotoUpload = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setAvatarImage(reader.result); // store base64 image
+    };
+    reader.readAsDataURL(file);
+  }
+};
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
 const [emotionColor, setEmotionColor] = useState('#ffffff');
