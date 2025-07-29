@@ -42,6 +42,29 @@ const [emotionColor, setEmotionColor] = useState('#ffffff');
   const [memoryLog, setMemoryLog] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const generateReflection = (text) => {
+  const emotion = detectEmotion(text);
+  setEmotionColor(getEmotionColor(emotion));
+  const tonedMessage = applyMirrorTone(emotion, baseMessage);
+  const renderMemoryLog = () => {
+  return memoryLog.slice().reverse().map((entry, index) => (
+    <div
+      key={index}
+      style={{
+        backgroundColor: '#f9f9f9',
+        borderLeft: '4px solid #ccc',
+        padding: '1rem',
+        marginBottom: '1rem',
+        borderRadius: '8px',
+      }}
+    >
+      <p style={{ fontWeight: 'bold' }}>You:</p>
+      <p>{entry.input}</p>
+      <p style={{ fontWeight: 'bold', marginTop: '0.5rem' }}>Mirror:</p>
+      <p>{entry.response}</p>
+    </div>
+  ));
+};
     const reflection = generateReflection(input);
     setMirrorResponse(reflection);
     setInput('');
@@ -49,11 +72,7 @@ const [emotionColor, setEmotionColor] = useState('#ffffff');
   };
   speakReflection(reflection);
 
-const generateReflection = (text) => {
-  const emotion = detectEmotion(text);
-  setEmotionColor(getEmotionColor(emotion));
-  const tonedMessage = applyMirrorTone(emotion, baseMessage);
-  
+
   storeMemory(input, tonedMessage);
   const memoryHints = getRecentMemories();
 const patternInsights = analyzePatterns(memoryLog);
