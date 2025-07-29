@@ -23,12 +23,33 @@ function getEmotionColor(emotion) {
 }
 
 }
+const [feedbackLog, setFeedbackLog] = useState([]);
+const [avatarPersonality, setAvatarPersonality] = useState({
+  warmth: 0.5,
+  logic: 0.5,
+  depth: 0.5
+});
 const generateReflection = (text) => {
   const memoryHints = getRecentMemories();
   const patternInsights = analyzePatterns(memoryHints);
   const mirrorNudge = generateMirrorNudge(patternInsights);
   const echo = generateAvatarEcho(text);
   return `${text}\n\n${echo}\n\n${mirrorNudge}`;
+};
+const adaptAvatarToFeedback = (entry) => {
+  const { emotion, response } = entry;
+
+  const updatedPersonality = { ...avatarPersonality };
+
+  if (emotion === 'sad') updatedPersonality.warmth += 0.05;
+  if (emotion === 'angry') updatedPersonality.logic += 0.05;
+  if (response && response.includes('?')) updatedPersonality.depth += 0.03;
+
+  Object.keys(updatedPersonality).forEach(key => {
+    updatedPersonality[key] = Math.min(1, Math.max(0, updatedPersonality[key]));
+  });
+
+  setAvatarPersonality(updatedPersonality);
 };
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
@@ -91,8 +112,22 @@ return `${tonedMessage}\n\n${echo}\n\n${mirrorNudge}`;
       </form>
 {mirrorResponse && (
   <>
-    <div style={{ marginTop: '2rem', backgroundColor: emotionColor }}>
-      <strong>Mirror:</strong> {mirrorResponse}
+    
+  <div style={{
+  backgroundColor: '#ffffff',
+  border: '2px solid #aaa',
+  padding: '1rem',
+  marginTop: '1rem',
+  borderRadius: '10px',
+  boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+  width: '100%',
+  maxWidth: '400px'
+}}>
+  <h3 style={{ marginBottom: '0.5rem' }}>Mirror State</h3>
+  <p><strong>Warmth:</strong> {Math.round(avatarPersonality.warmth * 100)}%</p>
+  <p><strong>Logic:</strong> {Math.round(avatarPersonality.logic * 100)}%</p>
+  <p><strong>Depth:</strong> {Math.round(avatarPersonality.depth * 100)}%</p>
+</div>
     </div>
     <MiniRitual emotion={emotionColor} />
   </>
