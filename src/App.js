@@ -1,3 +1,4 @@
+import generateAvatarEcho from './nodes/AvatarEcho';
 import MemoryScroll from './nodes/MemoryScroll';
 import MiniRitual from './nodes/MiniRitual';
 import { applyMirrorTone } from './nodes/mirrorTone';
@@ -19,6 +20,8 @@ function getEmotionColor(emotion) {
       return '#ffffff'; // white
   }
 }
+
+}
 function App() {
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
@@ -29,7 +32,9 @@ const [emotionColor, setEmotionColor] = useState('#ffffff');
     const reflection = generateReflection(input);
     setMirrorResponse(reflection);
     setInput('');
+    
   };
+  speakReflection(reflection);
 
 const generateReflection = (text) => {
   const emotion = detectEmotion(text);
@@ -39,7 +44,8 @@ const generateReflection = (text) => {
   storeMemory(input, tonedMessage);
   const memoryHints = getRecentMemories();
 
-  return tonedMessage;
+  const echo = generateAvatarEcho(tonedMessage, emotion, memoryHints);
+return `${tonedMessage}\n\n${echo}`;
 };
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
