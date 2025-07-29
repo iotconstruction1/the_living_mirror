@@ -7,7 +7,8 @@ import { detectEmotion } from './nodes/emotionNode';import React, { useState } f
 function App() {
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
-
+const [emotionColor, setEmotionColor] = useState('#ffffff');
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const reflection = generateReflection(input);
@@ -17,7 +18,8 @@ function App() {
 
 const generateReflection = (text) => {
   const emotion = detectEmotion(text);
-  const baseMessage = `It sounds like you're feeling ${emotion}. Let's explore that.`;
+  
+  const setEmotionColor(getEmotionColor(emotion)); = `It sounds like you're feeling ${emotion}. Let's explore that.`;
   const tonedMessage = applyMirrorTone(emotion, baseMessage);
 
   storeMemory(input, tonedMessage);
