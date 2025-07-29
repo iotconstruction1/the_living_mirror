@@ -46,7 +46,7 @@ const generateReflection = (text) => {
 const patternInsights = analyzePatterns(memoryLog);
 const mirrorNudge = generateMirrorNudge(patternInsights.dominantEmotion);
   const echo = generateAvatarEcho(tonedMessage, emotion, memoryHints);
-return `${tonedMessage}\n\n${echo}`;
+return `${tonedMessage}\n\n${echo}\n\n${mirrorNudge}`;
   
 };
   return (
