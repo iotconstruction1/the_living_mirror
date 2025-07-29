@@ -21,7 +21,7 @@ function App() {
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
 const [emotionColor, setEmotionColor] = useState('#ffffff');
-  
+  const [memoryLog, setMemoryLog] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
     const reflection = generateReflection(input);
