@@ -56,6 +56,14 @@ const adaptAvatarToFeedback = (entry) => {
 const [emotionColor, setEmotionColor] = useState('#ffffff');
   const [memoryLog, setMemoryLog] = useState([]);
   const handleSubmit = (e) => {
+    const speak = (message) => {
+  const utterance = new SpeechSynthesisUtterance(message);
+  utterance.rate = 1;
+  utterance.pitch = avatarPersonality.warmth * 2; // personalize voice
+  window.speechSynthesis.speak(utterance);
+}
+
+speak(tonedMessage);
     e.preventDefault();
   const emotion = detectEmotion(text);
   setEmotionColor(getEmotionColor(emotion));
