@@ -64,5 +64,5 @@ const generateReflection = (text) => {
     <MiniRitual emotion={emotionColor} />
   </>
 )}
-
+<MemoryScroll memoryLog={memoryLog} />
 export default App;
