@@ -23,19 +23,12 @@ function getEmotionColor(emotion) {
 }
 
 }
-function App() {
-  const [emotionHistory, setEmotionHistory] = useState([]);
-  const [avatarImage, setAvatarImage] = useState(null);
-const fileInputRef = useRef(null);
-  const handlePhotoUpload = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setAvatarImage(reader.result); // store base64 image
-    };
-    reader.readAsDataURL(file);
-  }
+const generateReflection = (text) => {
+  const memoryHints = getRecentMemories();
+  const patternInsights = analyzePatterns(memoryHints);
+  const mirrorNudge = generateMirrorNudge(patternInsights);
+  const echo = generateAvatarEcho(text);
+  return `${text}\n\n${echo}\n\n${mirrorNudge}`;
 };
   const [input, setInput] = useState('');
   const [mirrorResponse, setMirrorResponse] = useState('');
@@ -43,7 +36,6 @@ const [emotionColor, setEmotionColor] = useState('#ffffff');
   const [memoryLog, setMemoryLog] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    const generateReflection = (text) => {
   const emotion = detectEmotion(text);
   setEmotionColor(getEmotionColor(emotion));
   const tonedMessage = applyMirrorTone(emotion, baseMessage);
