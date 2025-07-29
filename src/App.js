@@ -1,4 +1,7 @@
+import { storeMemory, getRecentMemories } from './nodes/AdaptiveMemory';
 import { detectEmotion } from './nodes/emotionNode';import React, { useState } from 'react';
+
+// Inside handleSubmit
 
 function App() {
   const [input, setInput] = useState('');
@@ -12,7 +15,10 @@ function App() {
   };
 
   const generateReflection = (text) => {
-  const emotion = detectEmotion(text);
+ storeMemory(input, reflection);
+const memoryHints = getRecentMemories(); // Can be displayed or used in generateReflection
+0
+    const emotion = detectEmotion(text);
   return `I hear you. It sounds like you're feeling **${emotion}**. Let's reflect on that.`;
 };
   return (
