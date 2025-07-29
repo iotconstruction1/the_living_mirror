@@ -12,10 +12,9 @@ function App() {
   };
 
   const generateReflection = (text) => {
-    // Node 1 Gateway logic — this can route to other nodes later
-    return `You said: "${text}". Let's begin there.`;
-  };
-
+  const emotion = detectEmotion(text);
+  return `I hear you. It sounds like you're feeling **${emotion}**. Let's reflect on that.`;
+};
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
       <h1>The Living Mirror</h1>
