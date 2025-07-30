@@ -1,21 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 function App() {
   return (
-    <div style={{ 
-      height: '100vh', 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      fontSize: '24px', 
-      fontFamily: 'Arial, sans-serif'
-    }}>
-      Welcome to The Living Mirror.
+    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+      <h1>The Living Mirror is alive.</h1>
+      <p>This is the foundation of your avatar system.</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 import React, { useState, useRef, useEffect } from 'react';
 import generateAvatarEcho from './nodes/AvatarEcho';
 import MemoryScroll from './nodes/MemoryScroll';
