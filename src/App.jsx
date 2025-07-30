@@ -1,3 +1,21 @@
+import React from 'react';
+
+function App() {
+  return (
+    <div style={{ 
+      height: '100vh', 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      fontSize: '24px', 
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      Welcome to The Living Mirror.
+    </div>
+  );
+}
+
+export default App;
 import React, { useState, useRef, useEffect } from 'react';
 import generateAvatarEcho from './nodes/AvatarEcho';
 import MemoryScroll from './nodes/MemoryScroll';
