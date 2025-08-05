@@ -89,15 +89,27 @@ body {
 /* === BACKGROUND GLYPH SYMBOLS === */
 
 .realm-card::before {
-  content: '';
-  font-size: 8rem;
+  font-size: 10rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.06;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.15));
+}
+
+/* Emotion Symbol */
+.emotion::before {
+  content: '🫀';
+  color: #ff4d4d;
+}
+
+/* Thought Symbol */
+.thought::before {
+  content: '🧩';
+  color: #a78bfa;
 }
 
 /* Emotional Realm Symbol: 🫀 */
