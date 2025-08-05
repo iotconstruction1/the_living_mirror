@@ -194,3 +194,48 @@ body {
   content: '✨';
   color: #ffffff;
 }
+.input-area {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  resize: vertical;
+  background: #1c1c1c;
+  color: white;
+  box-shadow: inset 0 0 6px #000;
+}
+
+.reflect-button {
+  background: #ffffff;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.reflect-button:hover {
+  background: #cccccc;
+}
+
+.thank-you {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #9aff9a;
+  font-size: 0.95rem;
+}
+
+.completed {
+  box-shadow: 0 0 20px #00ffcc !important;
+}
