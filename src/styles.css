@@ -94,6 +94,12 @@ body {
   /* existing styles... */
 }
 
+.realm-card {
+  position: relative;
+  overflow: hidden;
+  /* existing card styles (padding, border-radius, etc.) */
+}
+
 .realm-card::before {
   font-size: 8rem;
   position: absolute;
