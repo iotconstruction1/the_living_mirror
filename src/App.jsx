@@ -21,6 +21,18 @@ const realmData = [
     icon: '🧩',
     color: 'thought',
   },
+  {
+  name: 'Realm of Shared Fire',
+  tagline: 'No soul burns alone — even in silence, we signal.',
+  icon: '🔥',
+  color: 'fire',
+},
+{
+  name: 'Realm of Silent Stars',
+  tagline: 'When the world falls away… what remains?',
+  icon: '✨',
+  color: 'stars',
+},
 ];
 
 export default function App() {
