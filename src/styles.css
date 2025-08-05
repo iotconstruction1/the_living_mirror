@@ -154,3 +154,14 @@ body {
   position: relative;
   z-index: 1;
 }
+/* === Realm of Living Clay === */
+.clay {
+  background: radial-gradient(circle, #3b2e1e, #15110d);
+  border: 1px solid #e0c28f;
+  box-shadow: 0 0 12px #e0c28f;
+}
+
+.clay::before {
+  content: '⚒️';
+  color: #e0c28f;
+}
