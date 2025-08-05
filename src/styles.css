@@ -86,3 +86,34 @@ body {
   border: 1px solid #6a4bc0;
   box-shadow: 0 0 12px #6a4bc0;
 }
+/* === BACKGROUND GLYPH SYMBOLS === */
+
+.realm-card::before {
+  content: '';
+  font-size: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Emotional Realm Symbol: 🫀 */
+.emotion::before {
+  content: '🫀';
+  color: #ff4d4d;
+}
+
+/* Thought Realm Symbol: 🧩 */
+.thought::before {
+  content: '🧩';
+  color: #a78bfa;
+}
+
+/* Push actual card content forward */
+.realm-card * {
+  position: relative;
+  z-index: 1;
+}
