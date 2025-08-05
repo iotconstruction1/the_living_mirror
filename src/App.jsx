@@ -4,21 +4,21 @@ import './styles.css';
 
 const realmData = [
   {
-  name: 'Realm of Living Clay',
-  tagline: 'The body remembers what the mind forgets. Shape it, and it will shape you.',
-  icon: '⚒️',
-  color: 'clay',
+    name: 'Realm of Living Clay',
+    tagline: 'The body remembers what the mind forgets. Shape it, and it will shape you.',
+    icon: '⚒️',
+    color: 'clay',
   },
   {
     name: 'Realm of Echoed Emotion',
     tagline: 'The heart never lies… but it does whisper.',
-    icon: '💓',
+    icon: '🫀',
     color: 'emotion',
   },
   {
     name: 'Realm of Shifting Thought',
     tagline: 'What you believe becomes the map… or the cage.',
-    icon: '🧠',
+    icon: '🧩',
     color: 'thought',
   },
 ];
