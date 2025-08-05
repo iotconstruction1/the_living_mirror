@@ -165,3 +165,26 @@ body {
   content: '⚒️';
   color: #e0c28f;
 }
+/* === Realm of Shared Fire === */
+.fire {
+  background: radial-gradient(circle, #42210b, #1a0d08);
+  border: 1px solid #f36f21;
+  box-shadow: 0 0 12px #f36f21;
+}
+
+.fire::before {
+  content: '🔥';
+  color: #f36f21;
+}
+
+/* === Realm of Silent Stars === */
+.stars {
+  background: radial-gradient(circle, #111111, #000000);
+  border: 1px solid #cfcfcf;
+  box-shadow: 0 0 12px #ffffff;
+}
+
+.stars::before {
+  content: '✨';
+  color: #ffffff;
+}
