@@ -33,3 +33,16 @@ The avatar represents your future self. It evolves based on:
 - Reflections stored over time
 
 ## 📁 Folder Structure
+
+/src/ ├── nodes/      // Core processing logic ├── realms/     // User interaction UI ├── avatar/     // Avatar visuals and evolution ├── memory/     // Stored user reflections and logs ├── assets/     // UI art and visual AI outputs ├── data/       // Games, personality tests, journaling
+
+## 🔧 Stack
+
+- **React + Vite**
+- **OpenAI API (for emotion + language analysis)**
+- **Optional: Firebase, Supabase, or MongoDB**
+
+---
+*This project is being developed by David Adkins and trained through a feedback loop to heal pain and unlock the human soul.*
+
+
