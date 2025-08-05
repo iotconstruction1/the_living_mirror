@@ -1,5 +1,7 @@
+/* === Global App Styles === */
 body {
   margin: 0;
+  padding: 0;
   background: #0e0e0e;
   font-family: 'Segoe UI', sans-serif;
   color: white;
@@ -15,8 +17,72 @@ body {
   margin-bottom: 2rem;
 }
 
+/* === Realm Card Grid === */
 .realm-wrapper {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+}
+
+/* === Base Card Style === */
+.realm-card {
+  width: 300px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px #000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.realm-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #aaa;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.realm-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.realm-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.enter-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.enter-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* === Realm of Echoed Emotion === */
+.emotion {
+  background: radial-gradient(circle, #420606, #1c0c0c);
+  border: 1px solid #a03434;
+  box-shadow: 0 0 12px #a03434;
+}
+
+/* === Realm of Shifting Thought === */
+.thought {
+  background: radial-gradient(circle, #21103d, #0e0a1f);
+  border: 1px solid #6a4bc0;
+  box-shadow: 0 0 12px #6a4bc0;
+}
