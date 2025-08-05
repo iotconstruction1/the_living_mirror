@@ -8,7 +8,7 @@ const realmData = [
   tagline: 'The body remembers what the mind forgets. Shape it, and it will shape you.',
   icon: '⚒️',
   color: 'clay',
-  }
+  },
   {
     name: 'Realm of Echoed Emotion',
     tagline: 'The heart never lies… but it does whisper.',
