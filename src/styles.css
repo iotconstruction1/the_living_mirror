@@ -1,1 +1,22 @@
+body {
+  margin: 0;
+  background: #0e0e0e;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
 
+.app-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.realm-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap
