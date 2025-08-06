@@ -1,7 +1,5 @@
-// src/App.jsx
-
 import React from "react";
-import StoryEngine from "../engines/storyEngine";
+import StoryEngine from "./engines/storyEngine";
 
 function App() {
   return (
