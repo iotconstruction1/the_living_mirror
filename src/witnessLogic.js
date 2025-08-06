@@ -21,4 +21,6 @@ function detectEmotion(text) {
   if (lowered.includes("lost") || lowered.includes("worthless")) return "shame";
   if (lowered.includes("help") || lowered.includes("lonely")) return "pain";
   return "neutral";
+}export function getEmotionLog() {
+  return emotionalLog;
 }
