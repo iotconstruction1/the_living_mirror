@@ -41,6 +41,9 @@ export default function StoryEngine() {
         <div className="mt-4 p-4 bg-gray-100 text-black rounded shadow">
           <p><strong>Mirror:</strong> {response}</p>
         </div>
+      <div className="mt-4 text-sm text-gray-400">
+  (Node 1 silently received your input.)
+</div>
       )}
     </div>
   );
