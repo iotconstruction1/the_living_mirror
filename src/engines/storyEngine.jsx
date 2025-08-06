@@ -44,6 +44,9 @@ export default function StoryEngine() {
       <div className="mt-4 text-sm text-gray-400">
   (Node 1 silently received your input.)
 </div>
+      <div className="mt-4 text-xs text-green-300">
+  <pre>{JSON.stringify(getEmotionLog(), null, 2)}</pre>
+</div>
       )}
     </div>
   );
