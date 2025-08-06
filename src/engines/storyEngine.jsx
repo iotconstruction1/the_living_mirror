@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { recordToNode1 } from "../witnessLogic";
-
+import { recordToNode1, getEmotionLog } from "../witnessLogic";
 export default function StoryEngine() {
   const [storyInput, setStoryInput] = useState("");
   const [response, setResponse] = useState("");
