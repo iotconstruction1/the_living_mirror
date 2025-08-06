@@ -1,3 +1,4 @@
+from heartbeat import check_pulse
 from flask import Flask, request, jsonify
 from datetime import datetime
 
